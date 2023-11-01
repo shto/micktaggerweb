@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Mick Tagger is an application intended to take the hassle out of using Spotify. Mick Tagger will let you be faster with Spotify and context-switch less, with features like keyboard shortcuts, smart playlists and auto remove playlist cleanup." />
+    <meta name="author" content="Alex twitter.com/shtopointo" />
+    <title>The Missing Spotify Keyboard Shortcuts - Mick Tagger</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link href="assets/img/icon_512x512.png" rel="icon">
+    <link href="assets/img/icon_512x512.png" rel="apple-touch-icon">
+
+    <style>
+        /* Gives the header (a lot) more spacing up top */
+        header {
+            padding-top: 1rem;
+        }
+
+        .top-space-2 {
+            padding-top: 2rem;
+        }
+
+        .top-space-4 {
+            padding-top: 4rem;
+        }
+
+        .top-space-6 {
+            padding-top: 6rem;
+        }
+
+        .stylized-numbers {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #00afbf;
+            font-weight: bold;
+        }
+
+        .stick-to-bottom {
+            position: absolute;
+            bottom: 20px;
+        }
+    </style>
+
+    <!-- Mixpanel Script -->
+    <script>(function (f, b) {
+            if (!b.__SV) {
+                var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) {
+                    function g(a, d) { var b = d.split("."); 2 == b.length && (a = a[b[0]], d = b[1]); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))) } } var a = b; "undefined" !== typeof c ? a = b[c] = [] : c = "mixpanel"; a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d }; a.people.toString = function () { return a.toString(1) + ".people (stub)" }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+                    for (h = 0; h < i.length; h++)g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]) } } for (var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++)b(j[c]); return d }; b._i.push([e, f, c])
+                }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+                    MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g)
+            }
+        })(document, window.mixpanel || []);
+        mixpanel.init("5a87841dfda994d515158a5c2e9ba615", { batch_requests: true })
+        window.onload = function () {
+            // don't log localhost opens
+            if (location.hostname != "localhost" && location.hostname != "127.0.0.1" && location.hostname != "") {
+                mixpanel.track("MT.com Opened")
+            }
+        }
+    </script>
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+</head>
+
+<body style="background-color:#ffe6b9;">
+    <!-- Header-->
+    <header>
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col col-lg-8 p-5">
+                    <h1 class="fw-bolder pb-3">Mick Tagger – Spotify Keyboard Shortcuts</h1>
+                    <div class="lead pb-3">
+                        No more context-switching. Add, queue, save songs and open playlists using just the keyboard.
+                    </div>
+                    <a class="m-3 gumroad-button" href="https://shto.gumroad.com/l/micktagger">Download on</a>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Lc8IRcX81Hw"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            loading="lazy" style="height:100%; width: 100%;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="px-3 top-space-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h2 class="fw-bolder text-center">Praise for Mick Tagger</h2>
+                
+                <div class="card bg-light pt-4 m-2" style="width: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="https://www.ifun.de/mick-tagger-spotify-listen-per-kurzbefehl-organisieren-179024/" target="_blank">ifun.de</a></h5>
+                        <p class="card-text">
+                            <i>
+                                If you work with playlists a lot and enjoy using keyboard shortcuts, Mick Tagger is a
+                                great addition to the Spotify desktop app. There is hardly a faster way to manage
+                                playlists and favorites in Spotify.
+                            </i>
+                        </p>
+                        <small class="card-text text-secondary">
+                            Translated from original German
+                        </small>
+                    </div>
+                </div>
+
+                <div class="card bg-light pt-4 m-2" style="width: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="https://twitter.com/PropaneFitness/status/1286593072369995776?s=20" target="_blank">Dr. Yusef Smith</a>
+                        </h5>
+                        <p class="card-text">
+                            <i>
+                                This app looks cool for speed-focused lovers of spotify.
+                                Alfred-style commands to quick-add to a playlist
+                            </i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card bg-light pt-4 m-2" style="width: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="https://twitter.com/PlaylistSubs/status/1491339456162729985?s=20&t=T6KUgfA82nmE350EaW1uhw" target="_blank">David from PlaylistSubs</a>
+                        </h5>
+                        <p class="card-text mb-3">
+                            <i>
+                                This app is so awesome! So handy, for playlist curators as well as for listeners! You can easily add songs to your playlists, auto-like, auto-remove and much more!
+                            </i>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="row justify-content-center">
+        <div class="col col-8 col-auto p-5">
+            <h2 class="fw-bolder pb-3">Why keyboard shortcuts for Spotify?</h2>
+            <p class="fst-italic">
+                Doing anything in Spotify is a mouse intensive activity. To like a song, save to playlist etc. you
+                have to click around the Spotify app, a lot.
+            </p>
+            <p>
+                With Mick Tagger you can use these keyboard shortcuts to get the same job done way faster:
+            </p>
+            <ul style="list-style-type: none;">
+                <li class="p-2"><i class="bi bi-check"></i> <span class="fw-bold">CMD + SHIFT + Space</span> to bring the app to
+                    the foreground.</li>
+                <li class="p-2"><i class="bi bi-check"></i> Press <span class="fw-bold">Enter</span> to save a song to a
+                    playlist</li>
+                <li class="p-2"><i class="bi bi-check"></i> <span class="fw-bold">CMD + SHIFT + S</span> to like the currently
+                    playing
+                    song</li>
+                <li class="p-2"><i class="bi bi-check"></i> <span class="fw-bold">CMD + SHIFT + J</span> to queue more songs
+                    from the
+                    current artist</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col col-8 p-5">
+            <h2 class="fw-bolder pb-3">Feedback or Ideas?</h2>
+            <p>
+                Do you have any feedback or ideas on how to make Mick Tagger better? We'd love to hear from you. Hit us up on Twitter.
+            </p>
+
+            <div class="text-center">
+                <a class="col-6 btn btn-lg btn-outline-primary p-3 m-3" href="https://twitter.com/micktaggerapp" target="_blank">
+                    <i class="bi bi-twitter"></i>
+                    <span class="p-1">Talk to us on Twitter</span>
+                </a>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Disclaimer -->
+    <section class="pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 text-secondary">
+                    Spotify is a trademark of Spotify AB.
+                    Mick Tagger is not affiliated, associated, endorsed by, or in any way officially connected
+                    with Spotify.
+                </div>
+                <div class="col col-lg-6 text-end">
+                    <a href="https://twitter.com/micktaggerapp" target="_blank">
+                        <i class="bi bi-twitter fs-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+
+</html>
